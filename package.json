@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "nodemon index.js"
   },
+  "type": "modules",
   "author": "Esteban Castañeda",
   "license": "ISC",
   "dependencies": {
