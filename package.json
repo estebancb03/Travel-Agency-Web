@@ -1,0 +1,17 @@
+{
+  "name": "travelagency",
+  "version": "1.0.0",
+  "description": "First project using Node.js",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "author": "Esteban Castañeda",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
