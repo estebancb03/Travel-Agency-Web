@@ -9,10 +9,10 @@ export const Travel = db.define('travels', {
         type: Sequelize.NUMBER
     },
     date_start: {
-        type: Sequelize.DATE
+        type: Sequelize.STRING
     },
     date_end: {
-        type: Sequelize.DATE
+        type: Sequelize.STRING
     },
     image: {
         type: Sequelize.STRING
