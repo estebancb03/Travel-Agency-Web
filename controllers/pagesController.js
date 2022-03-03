@@ -16,6 +16,19 @@ const travelsPage = async (req, res) => {
     });
 }
 
+const tripDetailsPage = async (req, res) => {
+    const { slug } = req.params;
+    try {
+        const travel = await Travel.findOne({ where: { slug: slug } });
+        res.render('travel', {
+            page: 'Información viaje',
+            travel
+        });
+    } catch(exception) {
+        console.error(exception);
+    }
+}
+
 const testimonialsPage = (req, res) => {
     res.render('testimonials', { page: 'Testimoniales' });
 }
@@ -24,5 +37,6 @@ export {
     homePage,
     wePage,
     travelsPage,
+    tripDetailsPage,
     testimonialsPage
 }
