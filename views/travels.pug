@@ -7,7 +7,7 @@ block content
             each travel in travels
                 .col-md-6.col-lg-4.mb-4
                     .card 
-                        img.card-img-top(src=`img/destinos_${ travel.image }.jpg`)
+                        img.card-img-top(src=`/img/destinations_${ travel.image }.jpg`)
                         .card-body
                             h2= travel.title
                             p
@@ -26,6 +26,6 @@ block content
                                     path(d='M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2')
                                     path(d='M16 3.13a4 4 0 0 1 0 7.75')
                                     path(d='M21 21v-2a4 4 0 0 0 -3 -3.85')
-                                | #{ travel.available } Disponibles
+                                | #{ travel.available } Available
                             p= travel.description.substr(0, 100) + '...'
-                            a(href=`travels/${ travel.slug }`, class="btn btn-success btn-block") Más información
+                            a(href=`travels/${ travel.slug }`, class="btn btn-success btn-block") More information
