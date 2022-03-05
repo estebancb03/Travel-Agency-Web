@@ -1,11 +1,17 @@
 import { Travel } from '../models/Travel.js'
 import { Testimonial } from '../models/Testimonial.js'
 
-const homePage = (req, res) => {
-    res.render('home', { 
-        page: 'Home', 
-        className: 'home'
-    });
+const homePage = async (req, res) => {
+    try {
+        const travels = await Travel.findAll({ limit: 3 }); 
+        res.render('home', { 
+            page: 'Home', 
+            className: 'home',
+            travels
+        });   
+    } catch(exception) {
+        console.error(exception);
+    }
 }
 
 const wePage = (req, res) => {
