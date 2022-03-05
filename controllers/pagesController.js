@@ -2,7 +2,10 @@ import { Travel } from '../models/Travel.js'
 import { Testimonial } from '../models/Testimonial.js'
 
 const homePage = (req, res) => {
-    res.render('home', { page: 'Home' });
+    res.render('home', { 
+        page: 'Home', 
+        className: 'home'
+    });
 }
 
 const wePage = (req, res) => {
