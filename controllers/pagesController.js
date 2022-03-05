@@ -2,12 +2,16 @@ import { Travel } from '../models/Travel.js'
 import { Testimonial } from '../models/Testimonial.js'
 
 const homePage = async (req, res) => {
+    const promiseDB = [];
+    promiseDB.push(Travel.findAll({ limit: 3 }));
+    promiseDB.push(Testimonial.findAll({ limit: 3 }));
     try {
-        const travels = await Travel.findAll({ limit: 3 }); 
+        const answer = await Promise.all(promiseDB);
         res.render('home', { 
             page: 'Home', 
             className: 'home',
-            travels
+            travels: answer[0],
+            testimonials: answer[1]
         });   
     } catch(exception) {
         console.error(exception);
