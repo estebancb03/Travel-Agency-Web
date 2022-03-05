@@ -10,12 +10,14 @@ const saveTestimonial = async (req, res) => {
     if(message.trim() === '') 
         errors.push({ message: 'Message is empty' });
     if(errors.length > 0) {
+        const testimonials = await Testimonial.findAll();
         res.render('testimonials', {
             page: 'Testimonials',
             errors,
             name,
             email,
-            message
+            message,
+            testimonials
         });
     } 
     else {
